@@ -14,7 +14,7 @@ async def get_not_fully_invested_obj(
 
     obj = await session.execute(
         select(obj_in).where(
-            obj_in.fully_invested == 0
+            obj_in.fully_invested is not None
         ).order_by(obj_in.create_date)
     )
     return obj.scalars().all()
