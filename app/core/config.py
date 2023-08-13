@@ -12,9 +12,9 @@ class Settings(BaseSettings):
     first_superuser_email: Optional[EmailStr] = None
     first_superuser_password: Optional[str] = None
 
-    length_name: int = None
-    min_anystr_length: int = None
-    zero: int = None
+    length_name: int = 100
+    min_anystr_length: int = 1
+    zero: int = 0
 
     class Config:
         env_file = '.env'

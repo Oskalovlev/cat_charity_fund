@@ -11,7 +11,7 @@ class BaseModel(Base):
     __abstract__ = True
 
     __table_agrs__ = (
-        CheckConstraint('full_amount > 0'),
+        CheckConstraint(f'full_amount > {settings.zero}'),
         CheckConstraint('invested_amount <= full_amount'),
     )
 
