@@ -20,6 +20,6 @@ class DonationCreate(DonationBase):
 
 class DonationDB(DonationCreate):
     user_id: int
-    invested_amount: int = Field(0)
+    invested_amount: int = Field()
     fully_invested: bool
     close_date: Optional[datetime]

@@ -38,7 +38,12 @@ async def create_new_charity_project(
         charity_project.name, session
     )
     new_project = await charity_project_crud.create(charity_project, session)
-    await investing(new_project, Donation, session)
+    obj = await charity_project_crud.get_underinvested_obj(session, Donation)
+    if obj:
+        session.add_all(investing(new_project, obj))
+    await session.commit()
+    await session.refresh(new_project)
+
     return new_project
 
 

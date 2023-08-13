@@ -1,27 +1,28 @@
 from datetime import datetime
 
 from typing import Optional
-
 from pydantic import BaseModel, Field, Extra, PositiveInt, validator
+
+from app.core.config import settings
 
 
 class CharityProjectBase(BaseModel):
-    name: Optional[str] = Field(None, max_length=100)
+    name: Optional[str] = Field(None, max_length=settings.length_name)
     description: Optional[str] = Field(None)
     full_amount: Optional[PositiveInt] = Field(None)
 
     class Config:
         extra = Extra.forbid
-        min_anystr_length = 1
+        min_anystr_length = settings.min_anystr_length
 
 
 class CharityProjectCreate(CharityProjectBase):
-    name: str = Field(..., max_length=100)
-    description: str = Field(...)
-    full_amount: PositiveInt = Field(...)
+    name: str = Field(max_length=settings.length_name)
+    description: str = Field()
+    full_amount: PositiveInt = Field()
 
     class Config:
-        min_anystr_length = 1
+        min_anystr_length = settings.min_anystr_length
 
 
 class CharityProjectUpdate(CharityProjectBase):
@@ -35,7 +36,7 @@ class CharityProjectUpdate(CharityProjectBase):
 
 class CharityProjectDB(CharityProjectCreate):
     id: int
-    invested_amount: int = Field(0)
+    invested_amount: int = Field()
     fully_invested: bool = Field(False)
     create_date: datetime
     close_date: Optional[datetime]
