@@ -14,9 +14,7 @@ class Settings(BaseSettings):
 
     length_name: int = None
     min_anystr_length: int = None
-    min_length_pass: int = None
     zero: int = None
-    lifetime_jwt: int = None
 
     class Config:
         env_file = '.env'
