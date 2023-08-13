@@ -12,11 +12,11 @@ class Settings(BaseSettings):
     first_superuser_email: Optional[EmailStr] = None
     first_superuser_password: Optional[str] = None
 
-    zero: int = 0
-    length_name: int = 100
-    min_anystr_length: int = 1
-    min_length_pass: int = 3
-    lifetime_jwt: int = 3600
+    zero: int
+    length_name: int
+    min_anystr_length: int
+    min_length_pass: int
+    lifetime_jwt: int
 
     class Config:
         env_file = '.env'
