@@ -2,7 +2,7 @@ from datetime import datetime
 from typing import List, Union
 
 from app.models import CharityProject, Donation, BaseModel
-from app.core.config import settings
+# from app.core.config import settings
 
 
 def close_donation_for_obj(
@@ -17,7 +17,7 @@ def investing(
     sources: List[Union[CharityProject, Donation]],
 ) -> List[BaseModel]:
 
-    target.invested_amount = settings.zero
+    target.invested_amount = 0
     new_target = []
     for source in sources:
         donation = min(
