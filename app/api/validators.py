@@ -4,7 +4,6 @@ from fastapi import HTTPException
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.crud.charity_project import charity_project_crud
-from app.core.config import settings
 from app.models import CharityProject
 
 
@@ -51,7 +50,7 @@ def check_charity_project_invested(
 def check_charity_project_already_invested(
     charity_project: CharityProject
 ):
-    if charity_project.invested_amount > settings.zero:
+    if charity_project.invested_amount > 0:
         raise HTTPException(
             status_code=HTTPStatus.BAD_REQUEST,
             detail='В проект были внесены средства, не подлежит удалению!'
