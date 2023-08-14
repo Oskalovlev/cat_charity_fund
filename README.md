@@ -1,4 +1,4 @@
-![py version](https://img.shields.io/pypi/pyversions/3.3)
+![py version]([(https://img.shields.io/pypi/v/cls-python)])
 
 # QRKot
 
