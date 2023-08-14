@@ -17,7 +17,7 @@ def investing(
     sources: List[Union[CharityProject, Donation]],
 ) -> List[BaseModel]:
 
-    target.invested_amount = settings.zero
+    target.invested_amount = settings.ZERO
     new_target = []
     for source in sources:
         donation = min(

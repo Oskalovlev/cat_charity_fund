@@ -5,5 +5,5 @@ from app.core.config import settings
 
 
 class CharityProject(BaseModel):
-    name = Column(String(settings.length_name), unique=True, nullable=False)
+    name = Column(String(settings.LENGTH_NAME), unique=True, nullable=False)
     description = Column(Text, nullable=False)

@@ -87,7 +87,7 @@ class CRUDBase:
         return db_project_id
 
     @staticmethod
-    async def get_charity_project_by_id(
+    async def get_project_by_id(
         project_id: int,
         session: AsyncSession,
     ) -> Optional[CharityProject]:
@@ -119,7 +119,7 @@ class CRUDBase:
     ):
         objects = await session.execute(
             select(obj_in).where(
-                obj_in.fully_invested == settings.zero
+                obj_in.fully_invested == settings.ZERO
             ).order_by(obj_in.create_date)
         )
         object = objects.scalars().all()

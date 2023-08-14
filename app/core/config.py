@@ -4,19 +4,19 @@ from pydantic import BaseSettings, EmailStr
 
 
 class Settings(BaseSettings):
-    app_title: str = 'Куаркот'
-    description: str = 'Жертвуй всем'
-    database_url: str = 'sqlite+aiosqlite:///./fastapi.db'
-    secret: str = 'SECRET'
+    APP_TITLE: str = 'Куаркот'
+    DESCRIPTION: str = 'Жертвуй всем'
+    DATABASE_URL: str = 'sqlite+aiosqlite:///./fastapi.db'
+    SECRET: str = 'SECRET'
 
-    first_superuser_email: Optional[EmailStr] = None
-    first_superuser_password: Optional[str] = None
+    FIRST_SUPERUSER_EMAIL: Optional[EmailStr] = None
+    FIRST_SUPERUSER_PASSWORD: Optional[str] = None
 
-    zero: int = 0
-    length_name: int = 100
-    min_anystr_length: int = 1
-    min_length_pass: int = 3
-    lifetime_jwt: int = 3600
+    ZERO: int = 0
+    LENGTH_NAME: int = 100
+    MIN_ANYSTR_LENGTH: int = 1
+    MIN_LENGTH_PASS: int = 3
+    LIFETIME_JWT: int = 3600
 
     class Config:
         env_file = '.env'
