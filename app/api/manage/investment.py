@@ -1,20 +1,20 @@
 from datetime import datetime
-from typing import List, Union
+from typing import List
 
 from app.models import CharityProject, Donation, BaseModel
 from app.core.config import settings
 
 
 def close_donation_for_obj(
-    target: Union[CharityProject, Donation]
+    target: CharityProject | Donation
 ) -> None:
     target.fully_invested = True
     target.close_date = datetime.now()
 
 
 def investing(
-    target: Union[CharityProject, Donation],
-    sources: List[Union[CharityProject, Donation]],
+    target: CharityProject | Donation,
+    sources: List[CharityProject | Donation],
 ) -> List[BaseModel]:
 
     target.invested_amount = settings.ZERO
