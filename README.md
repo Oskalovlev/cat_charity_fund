@@ -1,5 +1,3 @@
-![py version](https://img.shields.io/pypi/pyversions/3.10)
-
 # QRKot
 
 ### Приложение для Благотворительного фонда поддержки котиков.
