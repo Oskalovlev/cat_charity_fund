@@ -10,7 +10,7 @@
 ##### P.S. Остальной стек в requirements.txt
 
 
-#### Клонировать репозиторий и перейти в него в командной строке:
+### Клонировать репозиторий и перейти в него в командной строке:
 
 ```
 git clone https://github.com/Oskalovlev/cat_charity_fund.git
@@ -20,7 +20,7 @@ git clone https://github.com/Oskalovlev/cat_charity_fund.git
 cd cat_charity_fund
 ```
 
-#### Cоздать и активировать виртуальное окружение:
+### Cоздать и активировать виртуальное окружение:
 
 ```
 python3 -m venv venv
@@ -38,7 +38,7 @@ python3 -m venv venv
     source venv/scripts/activate
     ```
 
-#### Установить зависимости из файла requirements.txt:
+### Установить зависимости из файла requirements.txt:
 
 ```
 python3 -m pip install --upgrade pip
