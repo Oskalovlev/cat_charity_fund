@@ -6,7 +6,7 @@
 
 * Python - 3.10
 * FastAPI - 0.78.0
-```
+```sh
 P.S. Остальной стек в requirements.txt
 ```
 
