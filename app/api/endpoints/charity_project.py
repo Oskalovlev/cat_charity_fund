@@ -7,10 +7,9 @@ from app.core.db import get_async_session
 from app.core.user import current_superuser
 from app.crud.charity_project import charity_project_crud
 from app.api.validators import (
-    check_name_duplicate, check_charity_project_exists,
-    check_charity_project_already_invested,
-    check_charity_project_closed_invested,
-    check_charity_project_invested,
+    check_name_duplicate,
+    check_charity_project_exists, check_charity_project_invested,
+    check_charity_project_already_invested, check_charity_project_closed_invested,
 )
 from app.schemas.charity_project import (
     CharityProjectCreate, CharityProjectDB, CharityProjectUpdate

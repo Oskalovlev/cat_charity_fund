@@ -58,7 +58,7 @@ async def get_my_donations(
     session: AsyncSession = Depends(get_async_session),
     user: User = Depends(current_user),
 ) -> List:
-    """Получает список всех вложений для текущего пользователя."""
+    """Получает список всех вкладов для текущего пользователя."""
 
     my_donations = await donation_crud.get_by_user(
         session=session, user=user

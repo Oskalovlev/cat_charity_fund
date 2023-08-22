@@ -8,6 +8,7 @@ from app.core.config import settings
 def close_donation_for_obj(
     target: Union[CharityProject, Donation]
 ) -> None:
+
     target.fully_invested = True
     target.close_date = datetime.now()
 

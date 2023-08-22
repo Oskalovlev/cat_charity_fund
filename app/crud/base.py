@@ -116,7 +116,7 @@ class CRUDBase:
     async def get_underinvested_obj(
         session: AsyncSession,
         obj_in,
-    ):
+    ) -> Optional[CharityProject]:
         objects = await session.execute(
             select(obj_in).where(
                 obj_in.fully_invested == settings.ZERO
