@@ -49,5 +49,25 @@ python -m pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
+## Запуск:
+
+### Примените миграции:
+
+```
+alembic upgrade head
+```
+
+### Запустите приложение:
+
+```
+uvicorn app.mine:app 
+```
+##### PS Для автоперезапуска добавьте к команде ```--reload```
+
+### Дакументация API:
+```
+http://127.0.0.1:8000/docs
+```
+
 ### Автор 
 #### Оскалов Лев
